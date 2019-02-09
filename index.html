@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      // function Welcome (props) {
+      //   return <div>Bienvenido(a) {props.name} </div>
+      // }
+
+
+
+      class Listador extends React.Component {
+        render () {
+          const lista = this.props.arr.map((elem, index) => {
+            return <li key={index}>{elem}</li>
+          })
+          return <ul>
+            { lista }
+            </ul>
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <Listador arr={['a', 'b', 'c']}/>
+        </div>
+        , document.getElementById('root'))
+
+
+
+
+    </script>
+  </body>
+</html>
